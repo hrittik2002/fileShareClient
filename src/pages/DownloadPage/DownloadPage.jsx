@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from './DownloadPage.module.css'
 import downloadImage from '../../assets/Images/download.svg'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { getDownloadDeltailsApiCall, getDownloadLinkApiCall, getfileByUuidApiCall } from '../../apiCalls/apiCalls'
 
 const DownloadPage = () => {
@@ -33,8 +33,7 @@ const DownloadPage = () => {
             <small>{fileSize} KB</small>
         </div>
         <div className={styles.sendBtnContainer}>
-            <Link className={styles.downloadBtn} href={downloadLink} download="hrittik" target="_blank"
-        rel="noreferrer">Download file</Link>
+            <a href={downloadLink} download="hrittik">Download file</a>
         </div>
     </section>
 </div>
