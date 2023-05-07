@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styles from './DownloadPage.module.css'
 import downloadImage from '../../assets/Images/download.svg'
 import { useParams } from 'react-router-dom'
-import { getDownloadDeltailsApiCall, getfileByUuidApiCall } from '../../apiCalls/apiCalls'
+import { getDownloadDeltailsApiCall, getDownloadLinkApiCall, getfileByUuidApiCall } from '../../apiCalls/apiCalls'
 
 const DownloadPage = () => {
     const { uuid } = useParams();
@@ -14,7 +14,8 @@ const DownloadPage = () => {
         console.log(res);
         setFileName(res.data.fileName);
         setFileSize(res.data.fileSize);
-        setDownloadLink(`http://localhost:5000/api/download/${uuid}`)
+        const res2 = await getDownloadLinkApiCall(uuid);
+        setDownloadLink(res2.downloadLink);
     }
     useEffect(()=>{
         getDownloadDetails()

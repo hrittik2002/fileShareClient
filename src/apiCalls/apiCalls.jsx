@@ -40,3 +40,13 @@ export const getDownloadDeltailsApiCall = async(uuid) =>{
         return error;
     }
 }
+export const getDownloadLinkApiCall = async(uuid) =>{
+    try{
+        const res = await axios.get(`https://file-share-rest-api.vercel.app/api/download/${uuid}`);
+        console.log(res);
+        return res;
+    }
+    catch(error){
+        return error;
+    }
+}
