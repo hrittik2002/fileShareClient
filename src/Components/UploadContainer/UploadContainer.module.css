@@ -1,0 +1,131 @@
+.uploadContainer{
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0px 20px 20px #0000002e;
+}
+
+.dropZone{
+    width: var(--container-width);
+    min-height: 200px;
+    border: 2px dashed var(--border-color);
+    margin: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.dragged.dropZone{
+    background-color: var(--main-bg-color);
+    border-color: #2196f3;
+    transition: all .2s ease;
+}
+.iconContainer{
+    width: 75px;
+    height: 100px;
+    position: relative;
+}
+.iconContainer img{
+    width: 75px;
+    position: absolute;
+    transform-origin: bottom;
+    transition: transform 250ms ease-in-out; 
+}
+.iconContainer .center{
+    z-index: 2;
+}
+.iconContainer  .right , .iconContainer .left {
+    filter: grayscale(0.5);
+    transform: scale(0.9);
+}
+.dragged .iconContainer  .right  {
+   transform: rotate(10deg) translateX(10px) scale(0.9);
+}
+.dragged .iconContainer  .left  {
+    transform: rotate(-10deg) translateX(-10px) scale(0.9);
+ }
+ .dragged  .iconContainer .center {
+    transform: translateY(-5px);
+}
+.fileInput{
+    display: none;
+}
+.browseBtn{
+    color: #2196f3;
+    cursor: pointer;
+}
+.sharingContainer{
+    width: var(--container-width);
+    margin-bottom: 10px;
+    margin: auto;
+}
+.sharingContainer .inputContainer{
+    position: relative;
+}
+
+.sharingContainer .inputContainer input{
+    width: 100%;
+    border: 2px dashed var(--border-color);
+    border-radius: 3px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    font-size: 20px;
+    background-color: #f5fcff;
+    color: #0000008c;
+    
+}
+.inputContainer .icon{
+    position: absolute;
+    height: 22px;
+    width: 30px;
+    right: 7px;
+    top: 12px;
+    cursor: pointer;
+    color: gray;
+}
+.expire{
+    opacity: 0.7;
+    text-align: center;
+}
+.emailContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 25px;
+}
+.emailContainer form{
+    width: 95%;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.emailContainer .field{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.emailContainer label{
+    font-size: 18px;
+}
+.emailContainer input{
+    font-size: 18px;
+    border: none;
+    border-bottom: 2px solid var(--border-color);
+    text-align: center;
+}
+.emailContainer input:focus{
+    outline: none;
+}
+.emailContainer button{
+    font-size: 18px;
+    padding: 8px 40px;
+    margin-top: 15px;
+    background-color: var(--main-bg-color);
+    border: none;
+    border-radius: 5px;
+    color: #607d8b;
+    cursor: pointer;
+}
