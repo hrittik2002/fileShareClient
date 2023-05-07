@@ -33,7 +33,7 @@ const DownloadPage = () => {
             <small>{fileSize} KB</small>
         </div>
         <div className={styles.sendBtnContainer}>
-            <a href={downloadLink} >Download file</a>
+            <a href={downloadLink} target="_blank">Download file</a>
         </div>
     </section>
 </div>
