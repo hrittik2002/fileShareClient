@@ -15,7 +15,7 @@ const DownloadPage = () => {
         setFileName(res.data.fileName);
         setFileSize(res.data.fileSize);
         const res2 = await getDownloadLinkApiCall(uuid);
-        setDownloadLink(res2.downloadLink);
+        setDownloadLink(res2.data.downloadLink);
     }
     useEffect(()=>{
         getDownloadDetails()
